@@ -9,8 +9,8 @@
 | encrypted_password | string | null: false               |
 | last_name          | string | null: false               |
 | first_name         | string | null: false               |
-| last_name_kana     | text   | null: false               |
-| first_name_kana    | text   | null: false               |
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
 | birthday           | date   | null: false               |
 
 ### Association
@@ -20,17 +20,17 @@
 
 ## items テーブル
 
-| Column         | Type       | Options                       |
-| -------------- | ---------- | ----------------------------- |
-| item_name      | string     | null: false                   |
-| description    | text       | null: false                   |
-| category       | integer    | null: false                   |
-| condition      | integer    | null: false                   |
-| delivery_payer | integer    | null: false                   |
-| shipping_area  | integer    | null: false                   |
-| sending_days   | integer    | null: false                   |
-| price          | integer    | null: false                   |
-| user           | references | null: false, foreign_key: true|
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| item_name         | string     | null: false                    |
+| description       | text       | null: false                    |
+| category_id       | integer    | null: false                    |
+| condition_id      | integer    | null: false                    |
+| delivery_payer_id | integer    | null: false                    |
+| shipping_area_id  | integer    | null: false                    |
+| sending_days_id   | integer    | null: false                    |
+| price             | integer    | null: false                    |
+| user              | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -56,7 +56,7 @@
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | postal_code      | string     | null: false                    |
-| prefecture       | integer    | null: false                    |
+| prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
 | building_address | string     | null: false                    |
 | building_name    | string     |                                |
