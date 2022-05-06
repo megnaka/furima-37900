@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="RKaqxFJvysoi1iEGIHs_" name="ページ1">
-        <mxGraphModel dx="1140" dy="918" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+        <mxGraphModel dx="1154" dy="702" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -46,7 +46,7 @@
                 <mxCell id="32" value="delivery_payer_id ( integer型, NOT NULL )" style="text;strokeColor=#1A1A1A;fillColor=none;spacingLeft=15;spacingRight=5;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=14;spacingTop=5;spacingBottom=5;spacing=-2;fontColor=#1A1A1A;labelBorderColor=none;" parent="6" vertex="1">
                     <mxGeometry y="146" width="380" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="shipping_area_id ( integer型, NOT NULL )" style="text;strokeColor=#1A1A1A;fillColor=none;spacingLeft=15;spacingRight=5;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=14;spacingTop=5;spacingBottom=5;spacing=-2;fontColor=#1A1A1A;labelBorderColor=none;" parent="6" vertex="1">
+                <mxCell id="29" value="prefecture_id ( integer型, NOT NULL )" style="text;strokeColor=#1A1A1A;fillColor=none;spacingLeft=15;spacingRight=5;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=14;spacingTop=5;spacingBottom=5;spacing=-2;fontColor=#1A1A1A;labelBorderColor=none;" parent="6" vertex="1">
                     <mxGeometry y="176" width="380" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="sending_days-id ( integer型, NOT NULL )" style="text;strokeColor=#1A1A1A;fillColor=none;spacingLeft=15;spacingRight=5;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=14;spacingTop=5;spacingBottom=5;spacing=-2;fontColor=#1A1A1A;labelBorderColor=none;" parent="6" vertex="1">
