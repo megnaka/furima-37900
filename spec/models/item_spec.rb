@@ -53,10 +53,15 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Sending days can't be blank")
       end
-      it 'priceが半額数値ではない場合は保存できないこと' do
+      it 'priceが空では保存できないこと' do
+        @item.price = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price can't be blank")
+      end
+      it 'priceが全角数字では保存できないこと' do
         @item.price = '３００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is out of setting range")
+        expect(@item.errors.full_messages).to include("Price is invalid.Input half-width characters")
       end
       it 'priceが300円未満では保存できないこと' do
         @item.price = 0
