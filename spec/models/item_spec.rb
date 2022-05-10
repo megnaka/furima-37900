@@ -61,7 +61,7 @@ RSpec.describe Item, type: :model do
       it 'priceが全角数字では保存できないこと' do
         @item.price = '３００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid.Input half-width characters")
+        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters")
       end
       it 'priceが300円未満では保存できないこと' do
         @item.price = 0
