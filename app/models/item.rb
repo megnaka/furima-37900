@@ -14,10 +14,11 @@ class Item < ApplicationRecord
     validates :item_name
     validates :description
     validates :price, format: { with: /\A[0-9]+\z/, message: 'is invalid.Input half-width characters' }, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range"}
-    validates :category, numericality: { other_than: 0 , message: "can't be blank"}
-    validates :condition, numericality: { other_than: 0 , message: "can't be blank"}
-    validates :delivery_payer, numericality: { other_than: 0 , message: "can't be blank"}
-    validates :prefecture, numericality: { other_than: 0 , message: "can't be blank"}
-    validates :sending_days, numericality: { other_than: 0 , message: "can't be blank"}
   end
+
+  validates :category_id, numericality: { other_than: 0 , message: "can't be blank"}
+  validates :condition_id, numericality: { other_than: 0 , message: "can't be blank"}
+  validates :delivery_payer_id, numericality: { other_than: 0 , message: "can't be blank"}
+  validates :prefecture_id, numericality: { other_than: 0 , message: "can't be blank"}
+  validates :sending_days_id, numericality: { other_than: 0 , message: "can't be blank"}
 end
