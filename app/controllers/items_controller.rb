@@ -28,7 +28,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = item
     if @item.update(items_params)
       redirect_to item_path
     else
