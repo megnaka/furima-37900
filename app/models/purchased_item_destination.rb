@@ -1,4 +1,4 @@
-class Order
+class PurchasedItemDestination
   include ActiveModel::Model
   attr_accessor :postal_code, :prefecture_id, :city, :building_address, :building_name, :phone_number, :purchased_item_id, :user_id, :item_id
 
@@ -16,7 +16,6 @@ class Order
 
   def save
     purchased_item = PurchasedItem.create(user_id: user_id, item_id: item_id)
-
     Destination.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, building_address: building_address, building_name: building_name, phone_number: phone_number, purchased_item_id: purchased_item_id)
   end
 end
