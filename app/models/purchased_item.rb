@@ -1,5 +1,5 @@
 class PurchasedItem < ApplicationRecord
   belongs_to :user
   belongs_to :item
-  has_one :destination
+  has_one :purchased_item
 end
