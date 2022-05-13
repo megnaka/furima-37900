@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # @purchased_item = PurchasedItem.new
   end
 
   def edit
