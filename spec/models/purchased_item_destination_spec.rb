@@ -40,6 +40,11 @@ RSpec.describe PurchasedItemDestination, type: :model do
         @purchased_item_destination.valid?
         expect(@purchased_item_destination.errors.full_messages).to include("Prefecture can't be blank")
       end
+      it 'cityが空だと保存できないこと' do
+        @purchased_item_destination.city = ''
+        @purchased_item_destination.valid?
+        expect(@purchased_item_destination.errors.full_messages).to include("City can't be blank")
+      end
       it 'building_addressが空だと保存できないこと' do
         @purchased_item_destination.building_address = ''
         @purchased_item_destination.valid?
@@ -50,8 +55,18 @@ RSpec.describe PurchasedItemDestination, type: :model do
         @purchased_item_destination.valid?
         expect(@purchased_item_destination.errors.full_messages).to include("Phone number can't be blank")
       end
-      it 'phone_numberが10桁以上11桁以内の半角数値でないと保存できないこと' do
-        @purchased_item_destination.phone_number = '090-1234-5678'
+      it 'phone_numberが半角数字以外が含まれている場合は保存できないこと' do
+        @purchased_item_destination.phone_number = '０９０-１２３４-５６７８'
+        @purchased_item_destination.valid?
+        expect(@purchased_item_destination.errors.full_messages).to include('Phone number is invalid')
+      end
+      it 'phone_numberが9桁以下だと保存できないこと' do
+        @purchased_item_destination.phone_number = '123456789'
+        @purchased_item_destination.valid?
+        expect(@purchased_item_destination.errors.full_messages).to include('Phone number is invalid')
+      end
+      it 'phone_numberが12桁以上だと保存できないこと' do
+        @purchased_item_destination.phone_number = '090123456789'
         @purchased_item_destination.valid?
         expect(@purchased_item_destination.errors.full_messages).to include('Phone number is invalid')
       end
