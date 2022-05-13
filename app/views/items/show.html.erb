@@ -9,11 +9,11 @@
     <div class="item-img-content">
       <%= image_tag @item.image ,class:"item-box-img" %>
       
-      <% if @item.purchased_item.present? %>
-      <div class="sold-out">
+      <%# if @item.id == @purchased_item.item_id %>
+      <%# <div class="sold-out">
         <span>Sold Out!!</span>
-      </div>
-      <% end %>
+      </div> %>
+      <%# end %>
 
     </div>
     <div class="item-price-box">
@@ -25,7 +25,8 @@
       </span>
     </div>
 
-    <%if user_signed_in? &&  @item.purchased_item.blank? %>
+    <%#if user_signed_in? &&  @item.id != @purchased_item.item_id %>
+    <% if user_signed_in? %>
       <% if current_user.id == @item.user_id %>
         <%= link_to "商品の編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
         <p class="or-text">or</p>
