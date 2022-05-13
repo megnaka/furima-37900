@@ -19,6 +19,6 @@ class PurchasedItemsController < ApplicationController
   private
 
   def purchased_item_params
-    params.require(:purchased_item_destination).permit(:postal_code, :prefecture_id, :city, :building_address, :building_name, :phone_number).merge(user_id: current_user.id, item_id: @item.id)
+    params.require(:purchased_item_destination).permit(:postal_code, :prefecture_id, :city, :building_address, :building_name, :phone_number).merge(user_id: current_user.id)
   end
 end
