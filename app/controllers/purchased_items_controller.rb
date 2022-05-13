@@ -25,7 +25,7 @@ class PurchasedItemsController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = "sk_test_4a9edb4e313b027808ba9d8c"
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: Item.find(params[:item_id])[:price],
       card: purchased_item_params[:token],
