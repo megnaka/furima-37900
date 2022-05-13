@@ -6,7 +6,6 @@ RSpec.describe PurchasedItemDestination, type: :model do
       user = FactoryBot.create(:user)
       item = FactoryBot.create(:item)
       @purchased_item_destination = FactoryBot.build(:purchased_item_destination, user_id: user.id, item_id: item.id)
-      sleep 0.1
     end
 
     context '内容に問題ない場合' do
@@ -20,11 +19,6 @@ RSpec.describe PurchasedItemDestination, type: :model do
     end
 
     context '内容に問題がある場合' do
-      it "tokenが空では登録できないこと" do
-        @purchased_item_destination.token = nil
-        @purchased_item_destination.valid?
-        expect(@purchased_item_destination.errors.full_messages).to include("Token can't be blank")
-      end
       it 'postal_codeが空だと保存できないこと' do
         @purchased_item_destination.postal_code = ''
         @purchased_item_destination.valid?
