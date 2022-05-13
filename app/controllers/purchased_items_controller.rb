@@ -2,11 +2,12 @@ class PurchasedItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :move_to_index
 
-  def index
+
+  def index    
     @item = Item.find(params[:item_id])
     @purchased_item_destination = PurchasedItemDestination.new
   end
-
+  
   def create
     @item = Item.find(params[:item_id])
     @purchased_item_destination = PurchasedItemDestination.new(purchased_item_params)
@@ -19,6 +20,7 @@ class PurchasedItemsController < ApplicationController
     end
   end
 
+
   private
 
   def move_to_index
@@ -27,13 +29,11 @@ class PurchasedItemsController < ApplicationController
   end
 
   def purchased_item_params
-    params.require(:purchased_item_destination).permit(:postal_code, :prefecture_id, :city, :building_address, :building_name, :phone_number).merge(
-      user_id: current_user.id, item_id: params[:item_id], token: params[:token]
-    )
+    params.require(:purchased_item_destination).permit(:postal_code, :prefecture_id, :city, :building_address, :building_name, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
 
   def pay_item
-    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: Item.find(params[:item_id])[:price],
       card: purchased_item_params[:token],

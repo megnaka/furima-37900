@@ -20,7 +20,7 @@ RSpec.describe PurchasedItemDestination, type: :model do
     end
 
     context '内容に問題がある場合' do
-      it 'tokenが空では登録できないこと' do
+      it "tokenが空では登録できないこと" do
         @purchased_item_destination.token = nil
         @purchased_item_destination.valid?
         expect(@purchased_item_destination.errors.full_messages).to include("Token can't be blank")
@@ -53,7 +53,7 @@ RSpec.describe PurchasedItemDestination, type: :model do
       it 'phone_numberが10桁以上11桁以内の半角数値でないと保存できないこと' do
         @purchased_item_destination.phone_number = '090-1234-5678'
         @purchased_item_destination.valid?
-        expect(@purchased_item_destination.errors.full_messages).to include('Phone number is invalid')
+        expect(@purchased_item_destination.errors.full_messages).to include("Phone number is invalid")
       end
       it 'userが紐付いていないと保存できないこと' do
         @purchased_item_destination.user_id = nil
